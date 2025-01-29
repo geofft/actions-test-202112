@@ -25,6 +25,7 @@ jobs:
           python-version: 3.13
       - run: uv pip install pytest
       - run: ls -l $VIRTUAL_ENV/bin
+      - run: pytest
       - name: Run benchmarks
         uses: CodSpeedHQ/action@v3
         with:
