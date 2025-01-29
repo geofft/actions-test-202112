@@ -24,3 +24,7 @@ jobs:
         with:
           python-version: 3.13
       - run: ls -l $VIRTUAL_ENV/bin
+      - name: Run benchmarks
+        uses: CodSpeedHQ/action@v3
+        with:
+          run: python -c 2+2
