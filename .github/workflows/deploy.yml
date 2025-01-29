@@ -18,7 +18,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Build
-        run: cat /proc/cpuinfo
-      - name: Build
-        run: ls -l /dev/kvm
+      - uses: actions/checkout@v4
+      - name: Install the latest version of uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          python-version: 3.13
+      - run: ls -l $VIRTUAL_ENV/bin
