@@ -23,9 +23,16 @@ jobs:
         uses: astral-sh/setup-uv@v5
         with:
           python-version: 3.13
+      - name: Segfault
+        run: uv run python -c 'import ctypes; ctypes.CDLL(None).strlen(1)'
+      - name: something else
+        run: echo hi
       - run: uv pip install pytest
       - run: ls -l $VIRTUAL_ENV/bin
       - name: Run benchmarks
         uses: CodSpeedHQ/action@v3
         with:
           run: pytest
+      - name: Report errors
+        if: always()
+        run: dmesg
