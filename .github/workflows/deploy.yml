@@ -35,4 +35,4 @@ jobs:
           run: pytest
       - name: Report errors
         if: always()
-        run: dmesg
+        run: sudo dmesg
