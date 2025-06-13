@@ -23,5 +23,5 @@ jobs:
         with:
           python-version: 3.13
         if: always()
-      - run: python3 inspect.py
+      - run: uv run python inspect.py
         if: always()
