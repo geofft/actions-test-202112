@@ -1,0 +1,22 @@
+name: mac-gui
+
+on:
+  push:
+    branches: ["mac-gui"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: 3.13
+      - run: uv run python testtk.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: screenshot.png
+          path: screenshot.png
+          retention-days: 1
+          compression-level: 0
