@@ -13,7 +13,7 @@ jobs:
       - uses: astral-sh/setup-uv@v5
         with:
           python-version: 3.13
-      - run: uv run --managed-python python testtk.py
+      - run: uvx --managed-python python testtk.py
       - uses: actions/upload-artifact@v4
         with:
           name: screenshot.png
