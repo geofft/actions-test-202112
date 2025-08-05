@@ -1,3 +1,6 @@
+import sys
+print(sys.executable)
+print(sys.path)
 import subprocess
 from tkinter import *
 from tkinter import ttk
