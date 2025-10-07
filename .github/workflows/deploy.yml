@@ -1,0 +1,14 @@
+name: cygwin
+
+on:
+  push:
+    branches: ["cygwin"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - run: |
+          sh -c "echo hello"
+          sh -c "make blah"
